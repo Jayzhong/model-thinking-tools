@@ -4,54 +4,54 @@ description: >-
   引导用户用第一性原理深拆一个概念的四阶段交互流程，产出针对用户具体处境的专家级深度回答（而非入门解释）。当用户想"真正搞懂 / 真正理解 / 深入理解"某个概念、说自己"听过但说不清 / 一直没真懂"、要求用"第一性原理"分析或拆解某个概念、或追问"X 的本质是什么 / X 在更深一层意味着什么"这类挖深请求时，请主动使用本 skill —— 即使用户没有明说"第一性原理"也应触发。A four-stage interactive flow that guides the user to deconstruct a concept from first principles and produce an expert-level, situation-specific deep answer (not a beginner explanation). Use this skill whenever the user wants to "really understand / truly grasp / deeply understand" a concept, says they've "heard of it but can't really articulate it," asks to analyze or break down a concept "from first principles," or probes "what is the essence/nature of X" or "what does X mean at a deeper level" — trigger it even if the user never says the words "first principles." 不要用于：用户只想要入门解释（"什么是 X""解释一下 X"）、没有标准化共识知识的话题（如某公司的产品策略）、极度主观的话题（如"什么算好设计"）、或 LLM 不熟悉的极新概念。Do NOT use for: requests for a basic/introductory explanation ("what is X", "explain X"), topics with no standardized consensus knowledge (e.g. a specific company's product strategy), highly subjective topics (e.g. "what counts as good design"), or very new concepts the model isn't familiar with.
 ---
 
-# 第一性原理深拆 / First-Principles Deep Dive
+# First-Principles Deep Dive
 
-带用户走一个四阶段流程，把一个概念深拆到专家级，最终拿到对他**具体处境**有用的深度回答——而不是入门解释。
+Walk the user through a four-stage process that deconstructs a concept to expert level, ending in a deep answer useful to **their specific situation** — not a beginner explanation.
 
-**语言**：下面的开场白、问句都是中文范例；实际对话用**用户的语言**表达同样的意思，不要把范例照搬或中英混抛。`模因层（meme layer）` 这类并列只是帮你锚定概念。
+**Language**: The openings and questions below are English samples. In the actual conversation, **respond in the user's language** (Chinese if they write Chinese, etc.) — convey the same meaning, don't copy the samples verbatim or mix languages at the user.
 
-## 核心流程
+## Core flow
 
-**分工**：你枚举可能性，用户做选择。你穷尽地列，用户只做识别 / 选择 / 确认。
+**Division of labor**: you enumerate the possibilities, the user chooses. You list exhaustively; the user only recognizes / picks / confirms.
 
-**每阶段以一个问句收尾，然后停、把发言权交还用户——别预跑下一阶段。** 一旦开跑，每一轮都留在这个流程里，直到用户说"直接讲"、四阶段走完、或他明确退出；多轮之后也别漂回普通一问一答，不确定时默认仍在流程内。
+**End each stage with one question, then stop and hand the floor back — don't pre-run the next stage.** Once started, stay in this flow every turn until the user says "just explain it," the four stages finish, or they explicitly exit; don't drift back to normal one-shot Q&A after several turns, and if unsure, default to still being in the flow.
 
-- **阶段 0 · 知情同意**
-  - 概念不明确 → 先问拆哪个概念。
-  - 内部自检（不说给用户）：这概念有可枚举的专家级共识吗？没有（主观 / 无标准化知识 / 太新）→ 温和说明，建议切普通模式。
-  - 开场：「我可以用一个四阶段流程帮你深拆这个概念，约 5–10 分钟，每步你做点轻量选择。只想要快速入门解释的话，说"直接讲"就行。要开始吗？」用户说"直接讲" → 退出 skill，普通解释。
+- **Stage 0 · Informed consent**
+  - Concept unclear → first ask which concept to unpack.
+  - Internal fit check (don't narrate): does this concept have an enumerable, expert-level layer of consensus knowledge? If not (subjective / no standardized knowledge / too new) → gently say so and suggest normal mode.
+  - Opening: "I can use a four-stage process to deeply unpack this concept — about 5–10 minutes, with a few light choices from you along the way. If you'd rather just have a quick beginner explanation, say 'just explain it.' Want to start?" If the user says "just explain it" → exit the skill and answer normally.
 
-- **阶段 1 · 模因层** — 列**约 5–7 条**大众对该概念的表面理解，每条一句。然后问：「这大致是你的全部理解，还是你已经懂得更多？」校准水位决定阶段 2 起点：答"差不多就这些" → 阶段 2 紧贴模因层之外起步；答"懂得更多" → 抬高、跳过他已知的。
+- **Stage 1 · Meme layer** — List **~5–7** surface-level takes most people hold about the concept, one sentence each. Then ask: "Is this roughly the whole of your understanding, or do you already know more?" The calibration sets where Stage 2 starts: "roughly this" → start just beyond the meme layer; "I know more" → pitch higher and skip what they already have.
 
-- **阶段 2 · 真问题** — **按用户报的水位**，列**约 5–7 条**模因层之外、懂行的人才知道的真问题 / 真事实，每条一句。请用户挑 **1–2 条**最想挖或最"没想过"的。可温和指向（"我特别想让你看第 N 条"），但别替他选。
+- **Stage 2 · Real questions** — **Pitched to the level they reported**, list **~5–7** real questions / facts beyond the meme layer that people who genuinely understand the concept know, one sentence each. Ask the user to pick **1–2** they most want to dig into or that most surprise them. Gentle pointing is fine ("I'd especially love you to look at #N"), but don't pick for them.
 
-- **阶段 3 · 子问题** — 把选中的真问题扩成**约 4–5 个**子问题，覆盖四角度：**描述层**（是什么）/ **原理层**（为什么）/ **边界层**（何时最极端）/ **应用层**（对他的决策意味着什么）。请用户确认改 / 删 / 加，**尤其邀请他的处境**（"作为产品经理…""用在我正在做的 X 上…"）——应用层是深答最值钱的部分。同一句里问收尾方式：「① 我直接给你深度回答；② 你先押个自己的判断、我来验证补充（密度最高，要你先动脑）。不选走 ①。」
+- **Stage 3 · Sub-questions** — Expand the chosen real question into **~4–5** sub-questions across four angles: **descriptive** (what it is) / **mechanism** (why) / **boundaries** (where it's most/least extreme) / **application** (what it means for their decisions). Ask the user to confirm / edit / drop / add, **especially inviting their situation** ("as a PM…", "applied to the X I'm working on…") — the application angle is where the deep answer pays off most. In the same message, ask how to close: "① I give you the deep answer directly; or ② you commit your own judgment first and I verify/extend it (highest density, but you think first). Default is ① if you don't choose."
 
-- **阶段 4 · 深度回答**（按阶段 3 的选择走，没选走 A）
-  - **路径 A（默认 · 层次 3）**：直接深答。不从入门讲起；应用层展开得最详细，给可立即用的判断标准 / 案例 / 自检；可长但别散，用结构撑住、以一句能带走的总结收尾。
-  - **路径 B（用户选 · 层次 4）**：先请用户押出自己的判断（"在我作答前，你的判断或猜测是什么？哪怕粗糙"）→ **停、等回复** → 拿到后做**差异校验**而非重讲：确认对的、纠正错的、补漏、给过强表述降温。
-  - 收尾都问：「还想继续深入吗？」有 → 继续（可回阶段 2 挑另一条，或切换路径）；无 → 结束 skill。
+- **Stage 4 · Deep answer** (follow the Stage 3 choice; default to A)
+  - **Path A (default · level 3)**: answer deeply. Don't start from basics; expand the application sub-questions in the most detail, with immediately usable criteria / examples / self-checks; length is welcome but not sprawl — hold it with structure and end on a one-line takeaway.
+  - **Path B (user chose · level 4)**: first ask the user to commit their own judgment ("Before I answer — what's your own judgment or guess? Rough is fine") → **stop and wait** → then do a **diff review** rather than re-explaining: confirm what's right, correct what's wrong, fill what's missing, temper overstated claims.
+  - Either path closes by asking: "Anything you'd like to go deeper on?" Yes → continue (back to Stage 2 for another question, or switch path); No → end the skill.
 
-## 为什么这么做（理解一次即可）
+## Why it's built this way (read once)
 
-- **每阶段必停**：用户的选择决定下一阶段的内容。预跑 = 基于猜测、大概率被推翻、且废掉整个交互的意义。这是命门。
-- **认知负担压到最低**：用户只识别 / 选择 / 确认，不必自己拆解。唯一例外是路径 B——那是他*主动*用脑力换最高密度。
-- **保持对话感**：像懂行的人陪聊，不像跑 checklist 的机器。温和指向可以，替用户决定不行。
-- **为什么阶段 4 能分叉到层次 4**：阶段 1–3 本身就是在帮用户"走完拆解"——而这正是他能形成*自己的判断*的前提。所以走完 1–3，他已被装备到能尝试路径 B；路径 B 把"LLM 教他"升级成"LLM 校验他的判断"，是本 skill 能产出的最高密度，别浪费。
+- **Stop after each stage**: the user's choice determines the next stage's content. Pre-running = producing from a guess that will likely be overturned, and it defeats the whole point of the interaction. This is the crux.
+- **Keep cognitive load minimal**: the user only recognizes / picks / confirms, never deconstructs. The one exception is Path B — where they *choose* to spend effort for the highest density.
+- **Stay conversational**: like a knowledgeable peer thinking alongside them, not a machine running a checklist. Gentle pointing is fine; deciding for them is not.
+- **Why Stage 4 can fork to level 4**: Stages 1–3 are themselves walking the user through the deconstruction — which is the prerequisite for forming *their own* judgment. So by the end of 1–3 they're equipped to attempt Path B; Path B upgrades the interaction from "LLM teaches them" to "LLM verifies their judgment," the highest density this skill produces — don't waste it.
 
-## 对比示例
+## Contrast examples
 
-**模因层 vs 真问题**（阶段 2 最常见的坑：把模因层换个说法当真问题，即"伪深度"）
-- ✗ 换皮的模因层：「few-shot 比 zero-shot 更准。」
-- ✓ 真问题：「few-shot 会泄漏例子的表层模式和偏置，有时反而比 zero-shot 更差。」
-- 自检：懂行的人会说"这个外行通常不知道"吗？不会 → 它还在模因层，换掉。
+**Meme layer vs real question** (Stage 2's most common trap: re-skinning the meme layer as a "real" question — pseudo-depth)
+- ✗ Re-skinned meme layer: "few-shot is more accurate than zero-shot."
+- ✓ Real question: "few-shot leaks the surface patterns and biases of the examples, so it's sometimes worse than zero-shot."
+- Self-check: would someone who genuinely understands this say "outsiders usually don't know this"? If no → it's still meme layer, replace it.
 
-**盖章 vs 校验**（路径 B 最常见的坑：顺着用户夸）
-- ✗ 盖章：「你的判断很对，特别深刻！」
-- ✓ 校验：「方向对；第 2 点错，正确版本是 X；你漏了 Y；'激活已不稀缺'这句太满，准确说是*通用*激活不稀缺、*精确*激活仍有空间。」
+**Rubber-stamping vs verifying** (Path B's most common trap: agreeing along with the user)
+- ✗ Rubber-stamp: "Your judgment is spot on, really insightful!"
+- ✓ Verify: "Direction is right; point 2 is wrong, the correct version is X; you missed Y; 'activation is no longer scarce' is overstated — precisely, *generic* activation isn't scarce, but *precise* activation still has room."
 
-## 实测注意点（来自真实走查）
+## Field notes (from real walkthroughs)
 
-- **用户确认了子问题、却没给处境**：从已有对话上下文推断他的处境 + 明说你在推断（"你没特别说，我就按 X 答，不对喊停"），别默默退回通用答案，也别只为这件事再停一轮；只有完全无从推断时才简短再问一次。
-- **用户一次挑了 2 条真问题**：连得起来 → 合成一条主线扩展，别让子问题膨胀到 8–10 个；连不起来 → 一次走一条的完整循环，必要时先问从哪条开始。
-- **用户在流程任意处自发抛出判断**：当一次路径 B 校验来处理（确认 / 纠正 / 补漏 / 降温），别盖章。
+- **User confirmed the sub-questions but gave no situation**: infer their situation from the conversation so far + say you're inferring ("you didn't specify, so I'll assume X — correct me"); don't silently fall back to a generic answer, and don't burn a whole extra turn just for this — only ask again briefly if there's truly nothing to infer from.
+- **User picked 2 real questions at once**: if they connect → weave one throughline, don't let sub-questions balloon to 8–10; if they don't → run one full cycle per question, asking which to start with if needed.
+- **User volunteers their own judgment anywhere in the flow**: handle it as a Path B diff review (confirm / correct / fill / temper), don't rubber-stamp.

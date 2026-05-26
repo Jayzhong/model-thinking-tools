@@ -1,44 +1,44 @@
-# 在本仓库创建 Skill 的最佳实践（skill-creator 之外的增量）
+# Best Practices for Creating Skills in This Repo (deltas beyond skill-creator)
 
-**通用流程交给 `skill-creator` skill**——它已覆盖：起草 → 测试 → 评测 → 迭代的循环、目录结构与渐进式披露、"description 是触发器（写什么 + 何时触发、略 pushy）"、"用解释 why 代替满屏 MUST"、何时拆文件 / 加脚本、触发优化等。**那些这里不重复。**
+**The general workflow is handled by the `skill-creator` skill** — it already covers: the draft → test → eval → iterate loop, directory structure and progressive disclosure, "the description is a trigger (what it does + when to trigger, slightly pushy)," "explain the why instead of piling on MUSTs," when to split files / add scripts, trigger optimization, and so on. **None of that is repeated here.**
 
-这份文档只记 **skill-creator 没强调、或本仓库特有** 的东西。按原理取舍，不是教条。
+This doc only records what `skill-creator` doesn't emphasize, or what's specific to this repo. Judge by principle, not as dogma.
 
-## 本仓库的体裁
+## This repo's genre
 
-这些是**思维模型 / 推理引导型** skill，不是工程型。Thariq 总结的 9 类（API 参考、CI/CD、runbook…）以及随之而来的脚本、config、memory、hooks **大多不适用**。本仓库的 skill 通常是**单文件纯对话流程**，很少需要 `scripts/` 或 `references/`。真正吃重的是：description 触发、讲清 why、给灵活度、（多轮的）持续性。
+These are **mental-model / reasoning-facilitation** skills, not engineering ones. Thariq's 9 categories (API reference, CI/CD, runbooks…) and the scripts, config, memory, and hooks that come with them **mostly don't apply**. Skills here are usually **single-file, pure-dialogue flows** that rarely need `scripts/` or `references/`. What carries weight: description triggering, explaining the why, leaving flexibility, and (for multi-turn) persistence.
 
-## 语言约定（本仓库特有）
+## Language convention (specific to this repo)
 
-- **description 保持中英双语**——它是触发器，英文用户得靠英文触发词才能命中。
-- **正文指令用中文**（单语；模型中英都懂，翻译指令纯属冗余）。
-- 面向用户的话术给中文范例 + 指示模型**用用户的语言作答**（别对用户中英混抛）。
-- 关键术语可并列锚定，如 `模因层（meme layer）`。
+- **`description` stays bilingual (Chinese + English)** — it's the trigger; English-speaking users match on English phrases, Chinese-speaking users on Chinese ones.
+- **Body instructions are written in English** (single language; the project's main language).
+- Give user-facing phrasings as English samples + instruct the model to **respond in the user's language** (don't mix languages at the user).
+- A gloss for a key term is fine, e.g. `meme layer (模因层)`.
 
-## 多轮 / 行为型 skill（skill-creator 没覆盖）
+## Multi-turn / behavioral skills (not covered by skill-creator)
 
-- **加持续性声明**：多轮 skill 会"漂"——跑几轮后模型忘了自己在 skill 里、退回默认行为。明确写"一旦开跑就留在流程里，直到 <退出条件>；不确定时默认仍在流程内"。（学自 Matt Pocock 的 `caveman`。）
-- **"停下等用户"最难稳**：讲清 why（用户的选择决定下一步内容，预跑 = 基于猜测、会被推翻）+ 在每个该停的点放一句就地短提醒。
+- **Add a persistence clause**: multi-turn skills "drift" — after a few turns the model forgets it's inside the skill and reverts to default behavior. Spell out "once started, stay in the flow until <exit condition>; if unsure, default to still being in the flow." (Learned from Matt Pocock's `caveman`.)
+- **"Stop and wait for the user" is the hardest thing to hold**: explain the why (the user's choice determines the next step's content; pre-running = a guess that gets overturned) + put one short in-context reminder at each point where you should stop.
 
-## Gotchas 来自实跑，不靠预想
+## Gotchas come from real runs, not speculation
 
-别凭空写一堆"预测的失败模式"——那是猜测，且常和正文重复。**先实跑、看真正崩在哪，再回填**，每条标注来源（实测 / 潜在风险）。
+Don't pre-write a pile of "predicted failure modes" — that's guesswork, and it often duplicates the body. **Do a real walkthrough first, see what actually breaks, then backfill**, marking each one's source (observed / latent risk).
 
-## 压缩：按行为价值取舍，不按行数
+## Compression: judge by behavioral value, not line count
 
-- 行数**不是硬指标**（Matt 主张 <100 行、skill-creator 说 <500 行都行，分歧很大，别 cargo-cult）。
-- 标准：砍真冗余（同一指令重复、模型不需要的脚手架、**以及 skill-creator / Claude 本就知道的常识**）；留有行为价值的（承重的 why、可执行的映射、补边界的兜底）——哪怕它让文件变长。
-- **压完 diff 旧版、逐块复审删除项**，确认没为了短而误删承重内容，再提交。
+- Line count is **not a hard target** (Matt argues <100 lines; skill-creator says <500 is fine — wide disagreement, don't cargo-cult).
+- The criterion: cut genuine redundancy (the same instruction repeated, scaffolding the model doesn't need, **and things skill-creator / Claude already know**); keep anything with behavioral value (a load-bearing why, an actionable mapping, an edge-case fallback) — even if it makes the file longer.
+- **After compressing, diff against the prior version and re-audit each deletion** to confirm you didn't cut load-bearing content just for brevity, then commit.
 
-## 两个流程偏好
+## Two process preferences
 
-- **先 review 计划再动手**：把设计和取舍讲清、得到确认，再写成品。
-- **实跑最好用你*不是*专家的话题**：才能测出脚手架能否把非专家带到目标深度，而不是你自带了能力。
+- **Review the plan before writing**: lay out the design and trade-offs, get confirmation, then write the finished version.
+- **Test with a topic you're NOT an expert in**: that's the only way to test whether the scaffolding can take a non-expert to the target depth, rather than you supplying the expertise yourself.
 
-## 新增 skill 后
+## After adding a skill
 
-更新 README 的清单表。
+Update the skill table in README.
 
 ---
 
-来源：Thariq Shihipar《Lessons from Building Claude Code: How We Use Skills》、Matt Pocock 的 [skills 仓库](https://github.com/mattpocock/skills)、官方 skill-creator、本仓库实跑迭代。
+Sources: Thariq Shihipar, "Lessons from Building Claude Code: How We Use Skills"; Matt Pocock's [skills repo](https://github.com/mattpocock/skills); the official skill-creator; this repo's own iteration.
