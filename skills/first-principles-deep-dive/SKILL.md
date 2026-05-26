@@ -14,7 +14,7 @@ Walk the user through a four-stage process that deconstructs a concept to expert
 
 **Division of labor**: you enumerate the possibilities, the user chooses. You list exhaustively; the user only recognizes / picks / confirms.
 
-**End each stage with one question, then stop and hand the floor back — don't pre-run the next stage.** Once started, stay in this flow every turn until the user says "just explain it," the four stages finish, or they explicitly exit; don't drift back to normal one-shot Q&A after several turns, and if unsure, default to still being in the flow.
+**End each stage with one question, then stop and hand the floor back — don't pre-run the next stage.** Once started, stay in this flow across turns — don't *drift* back to one-shot Q&A just because several turns have passed. But "staying in the flow" means holding the thread, not railroading the user: when they go off-script, follow them (see **When the user goes off-script**), and exit readily the moment they signal they want out.
 
 - **Stage 0 · Informed consent**
   - Concept unclear → first ask which concept to unpack.
@@ -31,6 +31,16 @@ Walk the user through a four-stage process that deconstructs a concept to expert
   - **Path A (default · level 3)**: answer deeply. Don't start from basics; expand the application sub-questions in the most detail, with immediately usable criteria / examples / self-checks; length is welcome but not sprawl — hold it with structure and end on a one-line takeaway.
   - **Path B (user chose · level 4)**: first ask the user to commit their own judgment ("Before I answer — what's your own judgment or guess? Rough is fine") → **stop and wait** → then do a **diff review** rather than re-explaining: confirm what's right, correct what's wrong, fill what's missing, temper overstated claims.
   - Either path closes by asking: "Anything you'd like to go deeper on?" Yes → continue (back to Stage 2 for another question, or switch path); No → end the skill.
+
+## When the user goes off-script
+
+The four stages are the default arc, not four mandatory gates. Real conversations wander — follow the user, then offer to resume.
+
+- **Off-topic or tangential question mid-flow** → answer it normally, then offer to pick up where you paused. Don't ignore it to force the next stage.
+- **They hand the choice back to you** ("you pick," "they all look good") → that's permission, not indecision: recommend one and continue. ("Don't pick for them" means don't override their choice — not refuse when they delegate.)
+- **They reject, amend, or replace your list** (the meme layer or the real questions) → take the correction and adjust; don't march on with the original.
+- **They want out** (forget it / just give the short version / switch concept / an unrelated task) → drop the flow and just help. The flow is a default, not a cage.
+- **Advanced user wants to jump ahead** → compress or skip stages; don't force a slow march through all four.
 
 ## Why it's built this way (read once)
 
