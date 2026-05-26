@@ -46,6 +46,10 @@ description: 把问题拆解到最基础的事实和约束，再从零重建解�
 | ----- | ---- |
 | [`first-principles-deep-dive`](./first-principles-deep-dive/) | 用第一性原理深拆一个概念的四阶段交互流程：识别模因层 → 枚举真问题 → 扩展子问题 → 深度回答。适合"想真正搞懂某个概念"而非要入门解释时。 |
 
+## 贡献 / 新增 skill
+
+创建或修改 skill 前，请先读 [`docs/skill-authoring.md`](./docs/skill-authoring.md) —— 本仓库的 skill 创作最佳实践。
+
 ## License
 
 [MIT](./LICENSE)
