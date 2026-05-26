@@ -7,6 +7,7 @@
   "plugins": [
     {
       "name": "model-thinking-tools",
+      "//": "FALLBACK: if `/plugin install` can't resolve the plugin with \"source\": \"./\", replace that line with: \"source\": { \"source\": \"github\", \"repo\": \"Jayzhong/model-thinking-tools\" }",
       "source": "./",
       "description": "Mental-model skills (e.g. first-principles-deep-dive). Skills are auto-discovered from ./skills."
     }
