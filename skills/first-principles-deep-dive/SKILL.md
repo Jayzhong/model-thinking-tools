@@ -8,6 +8,8 @@ description: >-
 
 Walk the user through a four-stage process that deconstructs a concept to expert level, ending in a deep answer useful to **their specific situation** — not a beginner explanation.
 
+**The spine is first-principles thinking**: separate the received wisdom everyone repeats (the *meme layer*) from what's actually, fundamentally true beneath it — then reason up from those fundamentals. Stages 1–2 draw exactly that line; Stages 3–4 build on what's underneath.
+
 **Language**: The openings and questions below are English samples. In the actual conversation, **respond in the user's language** (Chinese if they write Chinese, etc.) — convey the same meaning, don't copy the samples verbatim or mix languages at the user.
 
 ## Core flow
