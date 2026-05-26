@@ -35,9 +35,14 @@ Don't pre-write a pile of "predicted failure modes" — that's guesswork, and it
 - **Review the plan before writing**: lay out the design and trade-offs, get confirmation, then write the finished version.
 - **Test with a topic you're NOT an expert in**: that's the only way to test whether the scaffolding can take a non-expert to the target depth, rather than you supplying the expertise yourself.
 
+## Layout & distribution
+
+- Each skill lives at **`skills/<name>/SKILL.md`** — a "standard location" that both `npx skills` and the Claude Code plugin discover automatically.
+- **Adding a skill needs no manifest edits.** Both channels auto-discover from `skills/`; `.claude-plugin/marketplace.json` lists the *plugin*, not individual skills, and `.claude-plugin/plugin.json` doesn't enumerate skills either.
+
 ## After adding a skill
 
-Update the skill table in README.
+Drop it in `skills/<name>/` and update the skill table in both README files. That's it.
 
 ---
 

@@ -1,0 +1,10 @@
+{
+  "name": "model-thinking-tools",
+  "description": "Agent skills themed around mental models — each packages a way of thinking into a capability your agent can invoke. Skills are auto-discovered from ./skills.",
+  "author": {
+    "name": "Jayzhong"
+  },
+  "homepage": "https://github.com/Jayzhong/model-thinking-tools",
+  "repository": "https://github.com/Jayzhong/model-thinking-tools",
+  "license": "MIT"
+}

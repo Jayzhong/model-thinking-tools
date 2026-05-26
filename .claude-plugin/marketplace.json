@@ -1,0 +1,14 @@
+{
+  "name": "model-thinking-tools",
+  "owner": {
+    "name": "Jayzhong"
+  },
+  "description": "A collection of agent skills themed around mental models.",
+  "plugins": [
+    {
+      "name": "model-thinking-tools",
+      "source": "./",
+      "description": "Mental-model skills (e.g. first-principles-deep-dive). Skills are auto-discovered from ./skills."
+    }
+  ]
+}

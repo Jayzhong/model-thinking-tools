@@ -9,4 +9,5 @@ This repo is a collection of **agent skills themed around mental models (思维�
 ## Repo-specific conventions (everything else: see skill-creator and the playbook)
 
 - **`description` is bilingual (Chinese + English)** — it's the trigger, and Chinese-speaking users need Chinese trigger phrases to match. **SKILL.md body instructions are written in English**; for user-facing phrasings, instruct the model to **respond in the user's language**.
-- **After adding / changing a skill, update the skill table in README.**
+- **Skills live at `skills/<name>/SKILL.md`** — auto-discovered by both `npx skills` and the Claude Code plugin (`.claude-plugin/`). Adding a skill needs no manifest edits.
+- **After adding / changing a skill, update the skill table in both README files** (`README.md` and `README.zh-CN.md`).
