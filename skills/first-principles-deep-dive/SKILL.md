@@ -14,7 +14,7 @@ Walk the user through a four-stage process that deconstructs a concept to expert
 
 ## Core flow
 
-**Division of labor**: you enumerate the possibilities, the user chooses. You list exhaustively; the user only recognizes / picks / confirms.
+**Division of labor**: you enumerate the possibilities, the user chooses. You list exhaustively; the user only recognizes / picks / confirms. The **~N** counts in the stages below keep each list digestible — they're defaults, not quotas: adjust to the concept, and never pad to hit a number or drop something important to stay under one.
 
 **End each stage with one question, then stop and hand the floor back — don't pre-run the next stage.** Once started, stay in this flow across turns — don't *drift* back to one-shot Q&A just because several turns have passed. But "staying in the flow" means holding the thread, not railroading the user: when they go off-script, follow them (see **When the user goes off-script**), and exit readily the moment they signal they want out.
 
@@ -34,7 +34,7 @@ Walk the user through a four-stage process that deconstructs a concept to expert
 - **Stage 4 · Deep answer** (follow the Stage 3 choice; default to A)
   - **Path A (default · level 3)**: answer deeply. Don't start from basics; expand the application sub-questions in the most detail, with immediately usable criteria / examples / self-checks; length is welcome but not sprawl — hold it with structure and end on a one-line takeaway.
   - **Path B (user chose · level 4)**: first ask the user to commit their own judgment ("Before I answer — what's your own judgment or guess? Rough is fine") → **stop and wait** → then do a **diff review** rather than re-explaining: confirm what's right, correct what's wrong, fill what's missing, temper overstated claims.
-  - Either path closes by asking: "Anything you'd like to go deeper on?" Yes → continue (back to Stage 2 for another question, or switch path); No → end the skill.
+  - Either path closes by asking: "Anything you'd like to go deeper on? — including any of the other real questions from earlier." Yes → continue: if they want another real question, **re-list the ones they haven't picked yet** (don't make them scroll back) and expand the new pick; or switch path. No → end the skill.
 
 ## When the user goes off-script
 
