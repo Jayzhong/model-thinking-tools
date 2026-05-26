@@ -20,21 +20,21 @@ model-thinking-tools/
 
 ```markdown
 ---
-name: first-principles
-description: 把问题拆解到最基础的事实和约束，再从零重建解法。当用户需要质疑既有假设、从根本上重新思考时使用。
+name: inversion
+description: >-
+  引导用户用"逆向思维"拆解问题：与其问"怎么成功"，先问"怎么必然失败"再反推。当用户……时使用。
+  Guide the user through inversion — instead of "how to succeed", ask "how would this
+  guaranteed fail" and work backwards. Use when … 不要用于：……
 ---
 
-# 第一性原理
+# 逆向思维 / Inversion
 
-## 何时使用
-...
-
-## 步骤
-...
+正文指令用中文；面向用户的话术指示模型用用户的语言作答。
+具体写法见 docs/skill-authoring.md，可参考已有的 first-principles-deep-dive。
 ```
 
 - `name`：skill 标识，kebab-case，与目录名一致。
-- `description`：一句话说明「做什么」+「何时触发」，决定 agent 何时调用它。
+- `description`：**是触发器，不是摘要**——写清「做什么 + 何时触发 + 何时*不*触发」，并保持**中英双语**（英文用户靠英文触发词命中）。
 
 ## 使用方式
 
