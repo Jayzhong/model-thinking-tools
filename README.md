@@ -79,7 +79,7 @@ first-principles-deep-dive skill is a worked example.
 
 | Skill | Description |
 | ----- | ---- |
-| [`first-principles-deep-dive`](./skills/first-principles-deep-dive/) | A four-stage interactive flow that deconstructs a concept from first principles: meme layer → real questions → sub-questions → deep answer. For when you want to *truly understand* a concept rather than get a beginner explanation. |
+| [`concept-deep-dive`](./skills/concept-deep-dive/) | A four-stage interactive flow that unpacks a concept: meme layer → real questions → sub-questions → deep answer. For when you want to *truly understand* a concept rather than get a beginner explanation. |
 
 ## Contributing
 

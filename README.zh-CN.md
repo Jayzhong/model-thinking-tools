@@ -78,7 +78,7 @@ description: >-
 
 | Skill | 说明 |
 | ----- | ---- |
-| [`first-principles-deep-dive`](./skills/first-principles-deep-dive/) | 用第一性原理深拆一个概念的四阶段交互流程：识别模因层 → 枚举真问题 → 扩展子问题 → 深度回答。适合"想真正搞懂某个概念"而非要入门解释时。 |
+| [`concept-deep-dive`](./skills/concept-deep-dive/) | 深拆一个概念的四阶段交互流程：识别模因层 → 枚举真问题 → 扩展子问题 → 深度回答。适合"想真正搞懂某个概念"而非要入门解释时。 |
 
 ## 贡献
 

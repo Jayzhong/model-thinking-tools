@@ -1,14 +1,14 @@
 ---
-name: first-principles-deep-dive
+name: concept-deep-dive
 description: >-
-  A four-stage interactive flow that guides the user to deconstruct a concept from first principles into an expert-level, situation-specific deep answer — not a beginner explanation. Use it whenever the user wants to "really / truly / deeply understand" a concept, says they've "heard of it but can't articulate it," asks to analyze or break down a concept "from first principles," or probes "what is the essence/nature of X" or "what X means at a deeper level" — trigger it even if they never say the words "first principles." Do NOT use for a basic explanation ("what is X", "explain X"), topics with no standardized consensus knowledge (e.g. a company's product strategy), highly subjective topics ("what counts as good design"), or very new concepts the model isn't familiar with. 中文触发词（同样适用）：想"真正搞懂 / 真正理解 / 深入理解"某个概念、"听过但说不清 / 一直没真懂"、要求用"第一性原理"分析或拆解、追问"X 的本质是什么 / 更深一层是什么"；不要用于"什么是 X""解释一下 X"、无标准化共识的话题、极度主观的话题、或太新的概念。
+  A four-stage interactive flow that unpacks a concept past the surface takes most people repeat, into an expert-level, situation-specific deep answer — not a beginner explanation. Use it whenever the user wants to "really / truly / deeply understand" a concept, says they've "heard of it but can't articulate it," or probes "what is the essence/nature of X" or "what X means at a deeper level" — trigger even when they don't name a framework. Do NOT use for a basic explanation ("what is X", "explain X"), topics with no standardized consensus knowledge (e.g. a company's product strategy), highly subjective topics ("what counts as good design"), or very new concepts the model isn't familiar with. For first-principles work specifically — challenging the inherited frame's assumptions and re-deriving from foundational truths — use the `first-principles-derivation` skill instead. 中文触发词（同样适用）：想"真正搞懂 / 真正理解 / 深入理解"某个概念、"听过但说不清 / 一直没真懂"、追问"X 的本质是什么 / 更深一层是什么"；不要用于"什么是 X""解释一下 X"、无标准化共识的话题、极度主观的话题、或太新的概念；要做第一性原理的推导（质问假设、从根本推），用 `first-principles-derivation`。
 ---
 
-# First-Principles Deep Dive
+# Concept Deep Dive
 
 Walk the user through a four-stage process that deconstructs a concept to expert level, ending in a deep answer useful to **their specific situation** — not a beginner explanation.
 
-**The spine is first-principles thinking**: separate the received wisdom everyone repeats (the *meme layer*) from what's actually, fundamentally true beneath it — then reason up from those fundamentals. Stages 1–2 draw exactly that line; Stages 3–4 build on what's underneath.
+**The spine is layered excavation**: separate the surface takes most people repeat (the *meme layer*) from what people who genuinely understand the concept know beneath it, then build progressively from there. Stages 1–2 draw that line; Stages 3–4 build on what's underneath. (If the user wants to *re-derive* something from foundational truths and challenge the inherited frame's assumptions, that's a different mental move — point them to `first-principles-derivation`.)
 
 **Language**: The openings and questions below are English samples. In the actual conversation, **respond in the user's language** (Chinese if they write Chinese, etc.) — convey the same meaning, don't copy the samples verbatim or mix languages at the user.
 
