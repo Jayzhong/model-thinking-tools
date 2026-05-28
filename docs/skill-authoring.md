@@ -14,6 +14,7 @@ These are **mental-model / reasoning-facilitation** skills, not engineering ones
 - **Body instructions are written in English** (single language; the project's main language).
 - Give user-facing phrasings as English samples + instruct the model to **respond in the user's language** (don't mix languages at the user).
 - A gloss for a key term is fine, e.g. `meme layer (模因层)`.
+- **Watch description length** — bilingual descriptions push toward (or past) the common **1024-char limit**. Over-limit descriptions can be **silently rejected** by some skill loaders, surfacing as "skill not found after install." Measure before committing; aim well under 1024. Cross-skill references inside the description are common length-offenders — they add bytes without adding triggering value (move them to the body if needed).
 
 ## Multi-turn / behavioral skills (not covered by skill-creator)
 
