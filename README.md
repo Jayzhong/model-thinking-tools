@@ -18,13 +18,13 @@ npx skills add Jayzhong/model-thinking-tools
 npx skills add Jayzhong/model-thinking-tools --list
 
 # Install one specific skill (non-interactive) into Claude Code
-npx skills add Jayzhong/model-thinking-tools --skill first-principles-deep-dive -a claude-code
+npx skills add Jayzhong/model-thinking-tools --skill concept-deep-dive -a claude-code
 
 # Install every skill
 npx skills add Jayzhong/model-thinking-tools --skill '*'
 
 # Or point directly at a single skill
-npx skills add https://github.com/Jayzhong/model-thinking-tools/tree/main/skills/first-principles-deep-dive
+npx skills add https://github.com/Jayzhong/model-thinking-tools/tree/main/skills/concept-deep-dive
 ```
 
 ### As a Claude Code plugin
@@ -46,11 +46,9 @@ Each skill is a kebab-case directory under `skills/`, containing a `SKILL.md`:
 model-thinking-tools/
 ├── .claude-plugin/          # Claude Code plugin + marketplace manifests
 └── skills/
-    ├── first-principles-deep-dive/
+    ├── concept-deep-dive/
     │   └── SKILL.md
-    ├── inversion/
-    │   └── SKILL.md
-    └── second-order-thinking/
+    └── first-principles-derivation/
         └── SKILL.md
 ```
 
@@ -69,7 +67,7 @@ description: >-
 
 Body instructions are written in English; for user-facing phrasings the model
 responds in the user's language. See docs/skill-authoring.md; the existing
-first-principles-deep-dive skill is a worked example.
+concept-deep-dive skill is a worked example.
 ```
 
 - `name`: skill identifier, kebab-case, matches the directory name.

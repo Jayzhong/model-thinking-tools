@@ -18,13 +18,13 @@ npx skills add Jayzhong/model-thinking-tools
 npx skills add Jayzhong/model-thinking-tools --list
 
 # 单独装某一个 skill（非交互），装到 Claude Code
-npx skills add Jayzhong/model-thinking-tools --skill first-principles-deep-dive -a claude-code
+npx skills add Jayzhong/model-thinking-tools --skill concept-deep-dive -a claude-code
 
 # 全装
 npx skills add Jayzhong/model-thinking-tools --skill '*'
 
 # 或直接指向单个 skill
-npx skills add https://github.com/Jayzhong/model-thinking-tools/tree/main/skills/first-principles-deep-dive
+npx skills add https://github.com/Jayzhong/model-thinking-tools/tree/main/skills/concept-deep-dive
 ```
 
 ### 作为 Claude Code 插件
@@ -46,11 +46,9 @@ npx skills add https://github.com/Jayzhong/model-thinking-tools/tree/main/skills
 model-thinking-tools/
 ├── .claude-plugin/          # Claude Code 插件 + 市场清单
 └── skills/
-    ├── first-principles-deep-dive/
+    ├── concept-deep-dive/
     │   └── SKILL.md
-    ├── inversion/
-    │   └── SKILL.md
-    └── second-order-thinking/
+    └── first-principles-derivation/
         └── SKILL.md
 ```
 
@@ -68,7 +66,7 @@ description: >-
 # Inversion
 
 正文指令用英文；面向用户的话术由模型按用户的语言作答。
-详见 docs/skill-authoring.md（英文），可参考已有的 first-principles-deep-dive。
+详见 docs/skill-authoring.md（英文），可参考已有的 concept-deep-dive。
 ```
 
 - `name`：skill 标识，kebab-case，与目录名一致。
