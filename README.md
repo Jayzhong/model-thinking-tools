@@ -80,6 +80,7 @@ first-principles-deep-dive skill is a worked example.
 | Skill | Description |
 | ----- | ---- |
 | [`concept-deep-dive`](./skills/concept-deep-dive/) | A four-stage interactive flow that unpacks a concept: meme layer → real questions → sub-questions → deep answer. For when you want to *truly understand* a concept rather than get a beginner explanation. |
+| [`first-principles-derivation`](./skills/first-principles-derivation/) | An interactive flow that **re-derives** an answer from first principles: surface the inherited frame's assumptions, identify the domain's "atoms," test the assumptions against the atoms, then re-derive from atoms alone. For challenging the conventional approach — not for just understanding a concept deeply. |
 
 ## Contributing
 

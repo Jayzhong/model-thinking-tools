@@ -79,6 +79,7 @@ description: >-
 | Skill | 说明 |
 | ----- | ---- |
 | [`concept-deep-dive`](./skills/concept-deep-dive/) | 深拆一个概念的四阶段交互流程：识别模因层 → 枚举真问题 → 扩展子问题 → 深度回答。适合"想真正搞懂某个概念"而非要入门解释时。 |
+| [`first-principles-derivation`](./skills/first-principles-derivation/) | 从第一性原理**重新推导**一个答案的交互流程：浮出继承框架的假设、识别领域的"原子"、把假设拿到原子前对质、仅用原子重新推导。适合质问惯例、做再推导——不是用来"深入理解某个概念"（那是 `concept-deep-dive`）。|
 
 ## 贡献
 
